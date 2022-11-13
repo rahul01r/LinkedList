@@ -163,6 +163,40 @@ namespace LinkedListProblem
             node.next = temp.next;
             temp.next = node;
         }
+        public void DeleteMiddleNode(T data)
+        {
+            int posation = Search(data);
+            if (posation == 0)
+            {
+                Console.WriteLine("No Such element found");
+                return;
+            }
+            Node<T> temp = head;
+            for (int i = 1; i < posation; i++)
+            {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+        }
+        public void Size()
+        {
+
+            Node<T> temp = this.head;
+            int count = 0;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+                return;
+            }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine($"Linked List Size is {count}");
+
+        }
         public void Display()
         {
             Node<T> temp = this.head;
