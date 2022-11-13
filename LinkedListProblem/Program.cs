@@ -10,7 +10,7 @@ namespace LinkedListProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList\n4.Insert The Value At Particular Posation\n5.Delete the first element in linked list\n6.Delete the last Element in Linked List\n7.Search for the element in the linked list\n8.Insert the node After Particular node\n9.Delete the middle node and Find the size of LinkdList");
+                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList\n4.Insert The Value At Particular Posation\n5.Delete the first element in linked list\n6.Delete the last Element in Linked List\n7.Search for the element in the linked list\n8.Insert the node After Particular node\n9.Delete the middle node and Find the size of LinkdList\n10.Ascending Ordeer ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -57,7 +57,13 @@ namespace LinkedListProblem
                         list.Size();
                         list.Display();
                         break;
-
+                    case 10:
+                        list.AscendingOrderSort(15);
+                        list.AscendingOrderSort(18);
+                        list.AscendingOrderSort(1);
+                        list.AscendingOrderSort(8);
+                        list.Display();
+                        break;
                 }
             }
         }

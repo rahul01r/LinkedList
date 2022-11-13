@@ -197,6 +197,27 @@ namespace LinkedListProblem
             Console.WriteLine($"Linked List Size is {count}");
 
         }
+        public void AscendingOrderSort(T data)
+        {
+            Node<T> node = new Node<T>(data);
+            Node<T> temp;
+            if (head == null || (head.data.CompareTo(node.data)) < 0)
+            {
+                node.next = head;
+                head = node;
+            }
+            else
+            {
+                temp = head;
+                while (temp.next != null && (temp.next.data.CompareTo(node.data)) < 0)
+                {
+                    temp = temp.next;
+                    node.next = temp.next;
+                }
+                temp.next = node;
+            }
+            Console.WriteLine("Data inserted " + node.data);
+        }
         public void Display()
         {
             Node<T> temp = this.head;
