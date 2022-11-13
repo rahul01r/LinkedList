@@ -146,6 +146,23 @@ namespace LinkedListProblem
             }
             return 0;
         }
+        public void InsertNodeAfterParticularNode(T data, T dataToSearch)
+        {
+            int position = Search(dataToSearch);
+            if (position == 0)
+            {
+                Console.WriteLine("No such element found");
+                return;
+            }
+            Node<T> node = new Node<T>(data);
+            Node<T> temp = this.head;
+            for (int i = 1; i < position; i++)
+            {
+                temp = temp.next;
+            }
+            node.next = temp.next;
+            temp.next = node;
+        }
         public void Display()
         {
             Node<T> temp = this.head;

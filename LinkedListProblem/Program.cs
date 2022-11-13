@@ -10,7 +10,7 @@ namespace LinkedListProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList\n4.Insert The Value At Particular Posation\n5.Delete the first element in linked list\n6.Delete the last Element in Linked List\n7.Search for the element in the linked list");
+                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList\n4.Insert The Value At Particular Posation\n5.Delete the first element in linked list\n6.Delete the last Element in Linked List\n7.Search for the element in the linked list\n8.Insert the node After Particular node");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -46,6 +46,10 @@ namespace LinkedListProblem
                         break;
                     case 7:
                         list.Search(15);
+                        list.Display();
+                        break;
+                    case 8:
+                        list.InsertNodeAfterParticularNode(40, 30);
                         list.Display();
                         break;
 
