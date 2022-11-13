@@ -10,7 +10,7 @@ namespace LinkedListProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList\n4.Insert The Value At Particular Posation\n5.Delete the first element in linked list");
+                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList\n4.Insert The Value At Particular Posation\n5.Delete the first element in linked list\n6.Delete the last Element in Linked List");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -38,6 +38,10 @@ namespace LinkedListProblem
                         break;
                     case 5:
                         list.Pop();
+                        list.Display();
+                        break;
+                    case 6:
+                        list.PopLast();
                         list.Display();
                         break;
 

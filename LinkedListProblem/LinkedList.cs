@@ -106,6 +106,25 @@ namespace LinkedListProblem
             }
             return node;
         }
+        public Node<T> PopLast()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+                return null;
+            }
+            else
+            {
+                Node<T> n = head;
+                while (n.next.next != null)
+                {
+                    n = n.next;
+                }
+
+                n.next = null;
+                return n;
+            }
+        }
         public void Display()
         {
             Node<T> temp = this.head;
