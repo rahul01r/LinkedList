@@ -7,21 +7,21 @@ using System.Xml.Linq;
 
 namespace LinkedListProblem
 {
-    public class LinkedList
+    public class LinkedList<T> where T : IComparable<T>
     {
-        public Node head;
+        public Node<T> head;
         //UC1
         //Add method to insert into linkedlist
-        public void Add(int data)
+        public void Add(T data)
         {
-            Node node = new Node(data);
+            Node<T> node = new Node<T>(data);
             if (this.head == null)
             {
                 this.head = node;
             }
             else
             {
-                Node temp = head;
+                Node<T> temp = head;
                 while (temp.next != null)
                 {
                     temp = temp.next;
@@ -29,14 +29,32 @@ namespace LinkedListProblem
                 temp.next = node;
             }
             Console.WriteLine("{0} inserted into linked list", node.data);
-
+        }
+        //UC2
+        /// <summary>
+        /// Method create "AddInReverseOrder" 
+        /// </summary>
+        /// <param name="data"></param>
+        internal void AddInReverseOrder(T data)
+        {
+            Node<T> newNode = new Node<T>(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node<T> temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
         }
         public void Display()
         {
-            Node temp = this.head;
+            Node<T> temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("linkedlist is empty");
+                Console.WriteLine("Linkedlist is empty");
                 return;
             }
             while (temp != null)
@@ -45,6 +63,5 @@ namespace LinkedListProblem
                 temp = temp.next;
             }
         }
-
     }
 }
