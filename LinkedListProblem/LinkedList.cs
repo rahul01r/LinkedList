@@ -67,6 +67,32 @@ namespace LinkedListProblem
             }
             Console.WriteLine("{0} append into linked list", node.data);
         }
+        public Node<T> InsertAtParticularPosition(int Position, T data)
+        {
+            Node<T> node = new Node<T>(data);
+            if (Position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+
+            }
+            else if (Position == 1)
+            {
+                node.next = this.head;
+                head = node;
+            }
+            else
+            {
+                Node<T> temp = head;
+                while (Position > 2)
+                {
+                    temp = temp.next;
+                    Position--;
+                }
+                node.next = temp.next;
+                temp.next = node;
+            }
+            return node;
+        }
         public void Display()
         {
             Node<T> temp = this.head;

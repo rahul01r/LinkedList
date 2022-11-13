@@ -10,7 +10,7 @@ namespace LinkedListProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList");
+                Console.WriteLine("Select Programs\n1.Create LinkedList\n2.Add the Elemente in Reverse Order\n3.Appending the Elemente in LinkedList\n4.Insert The Value At Particular Posation");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -30,6 +30,10 @@ namespace LinkedListProblem
                         list.Append(56);
                         list.Append(30);
                         list.Append(70);
+                        list.Display();
+                        break;
+                    case 4:
+                        list.InsertAtParticularPosition(2, 30);
                         list.Display();
                         break;
 
