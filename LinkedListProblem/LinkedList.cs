@@ -125,6 +125,27 @@ namespace LinkedListProblem
                 return n;
             }
         }
+        public int Search(T data)
+        {
+            int count = 0;
+            Node<T> temp = head;
+            if (this.head == null)
+            {
+                Console.WriteLine("Element Not found plz try Again");
+                return 0;
+            }
+            while (temp != null)
+            {
+                if (temp.data.Equals(data))
+                {
+                    Console.WriteLine("Element Found sucessfully");
+                    return count;
+                }
+                temp = temp.next;
+                count++;
+            }
+            return 0;
+        }
         public void Display()
         {
             Node<T> temp = this.head;
