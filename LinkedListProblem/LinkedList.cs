@@ -93,6 +93,19 @@ namespace LinkedListProblem
             }
             return node;
         }
+        public Node<T> Pop()
+        {
+            Node<T> node = head;
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+            }
+            else
+            {
+                head = head.next;
+            }
+            return node;
+        }
         public void Display()
         {
             Node<T> temp = this.head;
